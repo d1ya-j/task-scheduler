@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Scheduler</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <style>
+        body{
+        background-color: #81baf3;
+        background-image: url('background.jpg');
+        background-repeat: no-repeat;
+        background-size:cover;
+        }
+
+        #add-task{
+        width: 600px;
+        margin: 0 auto;
+        border: 1px solid #f5f5ce;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f5f5dc;
+        font-family: "Roboto Mono",monospace;
+        }
+
+        h1,h2{
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        }
+
+        .task-item {
+        border: 1px solid #0b0b0b;
+        font-size: inherit;
+        margin-bottom: 5px;
+        height: fit-content;
+        border-radius:10px;
+        display: inline-flex;
+        width: fit-content;
+        }
+
+        .deadlineAlign
+        {
+        background-color: #f5f5dc;
+        border: 15px;
+        font-family:monospace;
+        outline: #0b0b0b solid 1px;
+        border-radius: 5px;
+        display: inline-flex;
+        padding: 5px;
+        margin: 5px;
+        width: 25px;
+        }
+
+        .top-priority {
+        width:300px;
+        background-color: #ff754f; 
+        }
+
+        .medium-priority {
+            width: 300px;
+        background-color: #ffe449;
+        }
+
+        .low-priority {
+            width:300px;
+        background-color: #91e891;
+        }
+
+        .main-part{
+        display: flex;
+        }
+
+        .second-part{
+        display:flex;
+        align-items: right;
+        padding-top: 15px;
+        padding-left: 2px;
+        padding-right: 2px;
+        width: fit-content;
+        }
+
+        .buttonstyle{
+        background-color:beige;
+        padding: 5px;
+        text-align: center;
+        font-size: x-small;
+        border-radius: 10px;
+        height: 30px;
+        width: 55px;
+        }
+
+        .third-part{
+        width: 25%;
+        }
+
+        input{
+        size: 10px;
+        }
+
+        #addButton{
+        align-items: center;
+        padding: 5px 5px;
+        cursor: pointer;
+        color: #81baf3;
+        background-color: #ffffff;
+        border-radius: 5px;
+        }
+
+        #addButton:hover{
+        background-color: #81baf3;
+        color:#ffffff;
+        }
+
+        .entire-task{
+        width: fit-content;
+        display: block;
+        padding-right: 15%;
+        }
+
+        #priority {
+        background-color: #81baf3;
+        font-family: "Roboto Mono",monospace;
+        border-radius: 5px;
+        display: inline-block;
+        font: inherit;
+        font-display: white;
+        line-height: 1.5em;
+        padding: 1px;
+        }
+
+        input[type="date"]{
+        background-color: #81baf3;
+        padding: 1px;
+        font-family: "Roboto Mono",monospace;
+        color: #ffffff;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        }
+
+        input[type="text"]{
+        background-color: #81baf3;
+        padding: 1px;
+        font-family: "Roboto Mono",monospace;
+        color: #ffffff;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        }
+
+        ::placeholder{
+        color: #ffffff;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #711c1c;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 5px;
+            width: 0;
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+    <body>
+            <div id="add-task">
+            <h1>Task Scheduler</h1>
+            <form>
+                <input id="task" type="text" placeholder="Add New Task">
+                <select id="priority" style="font-family: monospace; font-size: 18px; font-display: #ffffff; color: #ffffff; border: none;">
+                    <option>Top priority</option>
+                    <option>Medium priority</option>
+                    <option>Low priority</option>
+                </select>
+                <input id="deadline" type="date">
+                <br>
+                <button id="addButton" onclick="addTask()">Add Task</button>
+            </form>
+            
+        <br>
+        
+        <br>
+        
+        <h2><u>Task List</u></h2>
+        <div id="taskList">
+
+        </div>
+        <h2><u>Completed Tasks</u></h2>
+        <div id="completedTasks">
+            
+        </div>
+        <div class="progress-bar-container">
+            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+    </div>
+        <script src="hello.js"></script>
+    </body>
+</html>
